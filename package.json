@@ -1,0 +1,22 @@
+{
+  "name": "quicksearch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shotai/quicksearch.git"
+  },
+  "author": "Mg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shotai/quicksearch/issues"
+  },
+  "dependencies": {
+    "consolidate": "^0.13.1",
+    "express": "^4.13.3"
+  }
+}

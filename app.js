@@ -4,6 +4,7 @@ var app = new express();
 var http = require('http');
 app.set('port', process.env.PORT || 9000);
 app.set('views', __dirname + '/testpage');
+app.use(express.static(__dirname));
 app.engine('html', engines.handlebars);
 app.set('view engine', 'html');
 

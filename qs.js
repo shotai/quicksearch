@@ -1,10 +1,15 @@
-quickSearch = (function($){
+var quickSearch = (function($){
 	var itemSource = []
 	var updateItems = function(){
-		$.data("qs").each(function(index, value){
-			if !($(this) in itemSource){
-				itemSource.push($(this));
+		$('p').each(function(index,value){
+			var qsattr = $(value).data('qs');
+			if (!(qsattr in itemSource)){
+				itemSource.push(qsattr);
 			}
 		});
+		console.log(itemSource);
 	}
+	return {
+    	updateItems: updateItems
+  	};
 }(jQuery))

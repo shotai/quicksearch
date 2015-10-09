@@ -6,6 +6,7 @@ app.set('port', process.env.PORT || 9000);
 //app.set('views', __dirname + '/testpage');
 app.use(express.static(__dirname));
 app.use(express.static(__dirname+'/testpage'));
+app.use("/images", express.static(__dirname+'/images'));
 //app.engine('html', engines.handlebars);
 //app.set('view engine', 'html');
 

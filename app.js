@@ -3,14 +3,14 @@ var engines = require('consolidate');
 var app = new express();
 var http = require('http');
 app.set('port', process.env.PORT || 9000);
-app.set('views', __dirname + '/testpage');
+//app.set('views', __dirname + '/testpage');
 app.use(express.static(__dirname));
 app.use(express.static(__dirname+'/testpage'));
-app.engine('html', engines.handlebars);
-app.set('view engine', 'html');
+//app.engine('html', engines.handlebars);
+//app.set('view engine', 'html');
 
 app.get('/', function(req, res) {
-    res.render('testpage.html')
+    res.render('index.html')
 });
 var httpListener = http.createServer(app);
 httpListener.listen(app.get('port'), function() {

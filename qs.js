@@ -13,10 +13,16 @@ var quickSearch = (function($) {
         return itemSource;
     };
     var generateSearchBar = function() {
-        var html = '<div id="qsmodal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"><div class = "modal-dialog modal-lg" ><div class = "modal-content" ><div class="ui-widget"><input id="qsbar" > </div></div> </div > </div>'
+        var html = '<div id="qsmodal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"><div class = "modal-dialog modal-sm" ><div class = "modal-content" ><div class="ui-widget" id="myLargeModalLabel"><input id="qsbar" > </div></div> </div > </div>'
+        
         $("#qs").html(html);
         $("#qsbar").autocomplete({
-            source: itemSource
+            source: itemSource,
+            open: function( event, ui ) {
+            	console.log($(".ui-autocomplete").html());
+            	console.log($("#myLargeModalLabel").html());
+            	$(".ui-autocomplete").addClass("modal-content")
+            }
         });
         $("#qsbar").change(function() {
             var tmp = $(this).val()
@@ -26,6 +32,7 @@ var quickSearch = (function($) {
         })
         $(document).on('keydown', null, 'ctrl+a', function() {
             $('#qsmodal').modal('toggle')
+            console.log($(".ui-autocomplete").html())
         });
 
 
